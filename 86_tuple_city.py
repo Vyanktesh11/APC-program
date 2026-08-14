@@ -1,0 +1,5 @@
+t=("Ichalkaranji","Kolhapur","Pune","Mumbai","Bengluru")
+print(t)
+print(t[0])
+print(t[len(t)-1])
+print(t[2])
