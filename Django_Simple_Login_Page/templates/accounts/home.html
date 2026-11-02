@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Student Portal</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background: #eff6ff;
+            color: #1e293b;
+        }
+        .card {
+            width: min(90%, 520px);
+            padding: 40px;
+            text-align: center;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(31, 41, 55, 0.1);
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            background: #dc2626;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <h1>Login Successful!</h1>
+        <p>Welcome, <strong>{{ request.user.username }}</strong>.</p>
+        <p>You have successfully logged in to the Student Portal.</p>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" style="padding:12px 24px;border:0;border-radius:8px;background:#dc2626;color:white;cursor:pointer;">Logout</button>
+        </form>
+    </main>
+</body>
+</html>
