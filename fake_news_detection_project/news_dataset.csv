@@ -1,0 +1,21 @@
+id,news,label,category,source_note
+1,India became independent from British rule on 15 August 1947.,REAL,History,Established historical fact; included as a sample matching record.
+2,The Earth revolves around the Sun.,REAL,Science,Basic scientific fact; included as a sample matching record.
+3,Water freezes at about 0 degrees Celsius under standard atmospheric pressure.,REAL,Science,Basic scientific fact; included as a sample matching record.
+4,The United Nations was established in 1945.,REAL,World,Established historical fact; included as a sample matching record.
+5,The human body normally has 206 bones in an adult skeleton.,REAL,Health,General educational fact; individual counts can vary.
+6,Light travels faster than sound in air.,REAL,Science,Basic scientific fact; included as a sample matching record.
+7,The Pacific Ocean is the largest ocean on Earth.,REAL,Geography,Established geographical fact; included as a sample matching record.
+8,The first crewed Moon landing took place in 1969 during Apollo 11.,REAL,Space,Established historical fact; included as a sample matching record.
+9,Plants use photosynthesis to convert light energy into chemical energy.,REAL,Science,Basic scientific fact; included as a sample matching record.
+10,"The Indian national flag has saffron, white, and green horizontal bands with a navy-blue Ashoka Chakra.",REAL,India,Describes the design of the Indian national flag.
+11,The Moon is made entirely of cheese.,FAKE,Science,Deliberately false example for testing the matching system.
+12,Drinking one glass of juice instantly cures every disease.,FAKE,Health,Deliberately false medical claim for testing; do not treat as medical advice.
+13,Humans can breathe normally in outer space without a spacesuit.,FAKE,Space,Deliberately false example for testing the matching system.
+14,The Sun revolves around the Earth once every 24 hours.,FAKE,Science,Deliberately false example for testing the matching system.
+15,A person can live without water for an unlimited number of days.,FAKE,Health,Deliberately false example for testing the matching system.
+16,The Pacific Ocean is smaller than a swimming pool.,FAKE,Geography,Deliberately false example for testing the matching system.
+17,The United Nations was created in the year 2025.,FAKE,World,Deliberately false example for testing the matching system.
+18,India gained independence from British rule in 1977.,FAKE,History,Deliberately false example for testing the matching system.
+19,Plants do not need light or any energy source to grow.,FAKE,Science,Deliberately false example for testing the matching system.
+20,The first crewed Moon landing happened in 1890.,FAKE,Space,Deliberately false example for testing the matching system.

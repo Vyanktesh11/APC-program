@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Dataset | TruthLens</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="/"><span class="brand-mark">T</span> TruthLens</a>
+    <div class="nav-links"><a href="/">Checker</a><a class="active" href="/dataset">Sample dataset</a></div>
+  </nav>
+  <main class="container dataset-page">
+    <div class="eyebrow muted">LOCAL CSV FILE</div>
+    <h1 class="dataset-title">Your 20 sample records</h1>
+    <p class="hero-copy">These are the records used by the comparison algorithm. You can edit <code>news_dataset.csv</code> to change the examples.</p>
+    <div class="table-wrap card">
+      <table>
+        <thead><tr><th>ID</th><th>Sample news</th><th>Label</th><th>Category</th></tr></thead>
+        <tbody>
+          {% for record in records %}
+          <tr><td>{{ record.id }}</td><td>{{ record.news }}</td><td><span class="tag tag-{{ record.label|lower }}">{{ record.label }}</span></td><td>{{ record.category }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="small-note">Labels are for this controlled educational dataset. Verify claims and sources before using them outside the demonstration.</p>
+    <a class="back-link" href="/">← Back to checker</a>
+  </main>
+</body>
+</html>

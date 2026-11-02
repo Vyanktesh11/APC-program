@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TruthLens | Sample News Checker</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="brand" href="/"><span class="brand-mark">T</span> TruthLens</a>
+      <div class="nav-links">
+        <a href="/">Checker</a>
+        <a href="/dataset">Sample dataset</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <div class="eyebrow">
+          <span class="pulse"></span> PYTHON • TEXT SIMILARITY DEMO
+        </div>
+        <h1>Check a claim.<br /><span>See what it matches.</span></h1>
+        <p class="hero-copy">
+          Enter a headline or statement. TruthLens compares it with a small,
+          local dataset of 20 sample records—no API key required.
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <strong>{{ total_records }}</strong><span>sample records</span>
+          </div>
+          <div class="stat"><strong>0</strong><span>API keys needed</span></div>
+          <div class="stat">
+            <strong>Local</strong><span>dataset lookup</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checker card">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow muted">NEWS ANALYSIS</div>
+            <h2>Enter news to check</h2>
+          </div>
+          <span class="pill">Demo mode</span>
+        </div>
+        <form method="POST" action="/">
+          <label for="news">News headline or statement</label>
+          <textarea
+            id="news"
+            name="news"
+            rows="4"
+            placeholder="Example: The Moon is made entirely of cheese."
+            required
+          >
+{{ searched_text }}</textarea
+          >
+          <div class="form-foot">
+            <button type="submit">
+              Analyze news <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </form>
+        {% if result %}
+        <div class="result result-{{ result.status }}">
+          <div class="result-top">
+            <div>
+              <div class="eyebrow muted">MATCH RESULT</div>
+              <h3>
+                {% if result.label == 'REAL' %}Sample label: REAL {% elif
+                result.label == 'FAKE' %}Sample label: FAKE {% else %}Unknown /
+                no match{% endif %}
+              </h3>
+            </div>
+            <div class="score">
+              <strong>{{ result.similarity }}%</strong
+              ><span>text similarity</span>
+            </div>
+          </div>
+          <p class="result-message">{{ result.message }}</p>
+        </div>
+        {% endif %}
+      </section>
+      <footer>APC Mini Project</footer>
+    </main>
+  </body>
+</html>
